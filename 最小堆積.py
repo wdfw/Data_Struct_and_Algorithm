@@ -21,7 +21,8 @@ class heap :
         while i*2+1 < len(self.heap) :
             v = i*2 + 1
             if v+1  < len(self.heap) and self.heap[v+1] < self.heap[v] : v+=1
-            self.__swap(i,v)
+            if self.heap[i] < self.heap[v] : self.__swap(i,v)
+            else : break
             i = v
             
     def __swap(self,i,j) :
